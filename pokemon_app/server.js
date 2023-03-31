@@ -1,7 +1,7 @@
 // Load Express -Require statement 
 const express = require('express')
-
-
+const pokemon = require('./models/pokemon')
+const index = require('./views/Index')
 // Initialize express 
 const app = express()
 const PORT = 3000
@@ -9,12 +9,12 @@ const PORT = 3000
 
 //-(MIDDLEWARE)
 app.get('/',(req,res)=>{
-    res.send(<h1>Home</h1>)
+    res.send(<h1>Pokemon App</h1>)
+})
+app.get('/pokemon',(req,res)=>{
+    res.render('index',{pokemon})
 })
 
-app.get('/pokemon',(req,res) =>{
-    res.send(<h1>pokemon</h1>)   
-})
 //------(ROUTING)
 
 
